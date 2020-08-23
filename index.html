@@ -95,6 +95,14 @@
             justify-content: flex-start;
             align-items: stretch;
         }
+        @media
+            only screen and (max-width: 460px),
+            only screen and (max-height: 460px)
+        {
+            #main .line {
+                margin: 12px 0;
+            }
+        }
         
         #main div.highlight, #main a.highlight {
             background-color: #f2f2f2;
