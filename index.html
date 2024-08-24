@@ -9,7 +9,7 @@
     <meta name="author" content="Barış Şenkal">
     <title>Barış Şenkal</title>
     <!--
-    
+
               ``..----..``
            .-://:--:///::::-`                `-/oooooooo/-`
          .:///:--:///:--:///::.            :shhhhhhmmmmmmmds-                 `.
@@ -25,7 +25,7 @@
          .::///:--:///:--:///:.            :shhhhhhdmmmmmmdo-
            .-::::///:--:/::-`                `-/oooooooo/-
               ``..----..
-    
+
     -->
     <script type="application/ld+json">
         {
@@ -66,7 +66,22 @@
             line-height: 3vh;
             margin: 0;
             padding: 0;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
+        html::-webkit-scrollbar, body::-webkit-scrollbar {
+            display: none;
+        }
+        @media
+            only screen and (max-height: 460px),
+            only screen and (max-width: 460px) and (min-aspect-ratio: 1/2.4)
+        {
+            html, body {
+                font-size: 2.5vh;
+                line-height: 3.75vh;
+            }
+        }
+
         body {
             color: #333333;
             background-color: #fafafa;
@@ -78,12 +93,12 @@
                 background-color: #1f2430;
             }
         }
-        
+
         a, a:hover, a:active, a:focus {
             color: inherit;
             text-decoration: none;
         }
-        
+
         #main {
             height: 100vh;
             margin-bottom: calc(7*3vh); /* NOTE(baris): Simulating "scroll beyond last line" */
@@ -96,14 +111,17 @@
             align-items: stretch;
         }
         @media
-            only screen and (max-width: 460px),
+            only screen and (max-width: 460px) and (min-aspect-ratio: 1/2.4),
             only screen and (max-height: 460px)
         {
             #main .line {
-                margin: 12px 0;
+                margin: 0.5vh 0;
+            }
+            #main .line:first-child {
+                margin-top: 4.5vh; /* 1 line spacing */
             }
         }
-        
+
         #main div.highlight, #main a.highlight {
             background-color: #f2f2f2;
         }
@@ -112,7 +130,7 @@
                 background-color: #191e2a;
             }
         }
-        
+
         #main div.number {
             flex-basis: 4vh;
             text-align: right;
@@ -130,15 +148,20 @@
                 color: rgba(112, 122, 140, 0.8);
             }
         }
-        
+        @media only screen and (max-width: 460px) {
+            #main div.number {
+                padding-left: 0;
+            }
+        }
+
         #main div.text, #main a.text {
             flex: 1;
         }
-        
+
         .todo-highlight {
             color: #ffa114;
         }
-        
+
         @keyframes blink {
             25%,75% {
                 opacity: 1;
@@ -170,7 +193,7 @@
                 background-color: #ffcc66;
             }
         }
-        
+
         #footer {
             text-align: center;
             color: #ccc;
@@ -185,13 +208,12 @@
     </style>
 </head>
 <body>
-    
     <div id="main">
         <div class="line">
             <div class="number">1</div><div class="text"></div>
         </div>
         <div class="line">
-            <div class="number highlight">2</div><div class="text highlight">// <span class="todo-highlight">TODO</span>(baris): homepage <div id="cursor"></div></div class="highlight">
+            <div class="number highlight">2</div><div class="text highlight">// <span class="todo-highlight">TODO</span>(baris): homepage <div id="cursor"></div></div>
         </div>
         <div class="line">
             <div class="number">3</div><div class="text"></div>
@@ -213,10 +235,10 @@
         </div>
     </div>
     <div id="footer">
-        Copyright ©2013-<script>document.write((new Date()).getFullYear())</script> Barış Şenkal. All rights Reserved.
+        Copyright ©2013-<script>document.write((new Date()).getFullYear())</script> Barış Şenkal
     </div>
 
-<script>
+    <script>
     // Easter egg idea from ovo: pressing a number should click that line
     (function () {
         window.addEventListener('keydown', function (e) {
@@ -239,20 +261,10 @@
                     textElement.dispatchEvent(event);
                 }
             }
-            
         });
     })();
-    
-    // TODO(baris): Go full monaco? (https://github.com/Microsoft/monaco-editor)
-</script>
-<script>
-// Someone gotta feed the AI overlords
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-9958704-3', 'auto');
-ga('send', 'pageview');
-</script>
-</body>
+
+    // TODO(baris): Go full monaco?
+    </script>
+    </body>
 </html>
