@@ -109,15 +109,19 @@
             justify-content: flex-start;
             align-items: stretch;
         }
+        #main .line.empty {
+            display: none;
+            min-height: 1.5em;
+        }
         @media
             only screen and (max-width: 460px) and (min-aspect-ratio: 1/2.4),
             only screen and (max-height: 460px)
         {
             #main .line {
-                margin: 0.5vh 0;
+                padding: 0.5vh 0;
             }
-            #main .line:first-child {
-                margin-top: 4.5vh; /* 1 line spacing */
+            #main .line.empty {
+                display: flex;
             }
         }
 
@@ -197,7 +201,7 @@
         #footer {
             text-align: center;
             color: #ccc;
-            padding: calc(1em * 1.5) 2vh;
+            padding: 1.5em 2vh;
         }
         @media (prefers-color-scheme: dark) {
             #footer {
@@ -212,6 +216,7 @@
 </head>
 <body>
     <div id="main">
+        <div class="line empty"></div>
         <div class="line">
             <div class="number">1</div><div class="text"></div>
         </div>
