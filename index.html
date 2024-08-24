@@ -101,7 +101,6 @@
 
         #main {
             height: 100vh;
-            margin-bottom: calc(7*3vh); /* NOTE(baris): Simulating "scroll beyond last line" */
         }
         #main .line {
             display: flex;
@@ -198,13 +197,16 @@
         #footer {
             text-align: center;
             color: #ccc;
-            height: 6vh;
-            margin-top: -6vh;
+            padding: calc(1em * 1.5) 2vh;
         }
         @media (prefers-color-scheme: dark) {
             #footer {
                 color: #46516d;
             }
+        }
+
+        #footer div {
+          display: inline-block;
         }
     </style>
 </head>
@@ -240,7 +242,9 @@
         </div>
     </div>
     <div id="footer">
-        Copyright ©2013-<script>document.write((new Date()).getFullYear())</script> Barış Şenkal
+        <div>Copyright ©2013-<script>document.write((new Date()).getFullYear())</script></div>
+        <div>Barış Şenkal</div>
+        <div>All rights reserved</div>
     </div>
 
     <script>
