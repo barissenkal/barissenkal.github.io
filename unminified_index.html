@@ -180,21 +180,19 @@
         }
 
         #footer {
-            text-align: center;
-            color: #ccc;
-            padding: 1.5em 2vh;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          color: #ccc;
+          padding: 1.5em 2vh;
+          gap: 0.5em;
         }
         @media (prefers-color-scheme: dark) {
             #footer {
                 color: #46516d;
             }
-        }
-
-        #footer div {
-          display: inline-block;
-        }
-        #footer div:nth-child(2) {
-          padding: 0 0.5em 0;
         }
     </style>
 </head>
